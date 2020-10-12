@@ -1,0 +1,1683 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     69206,       1682]
+NotebookOptionsPosition[     63888,       1585]
+NotebookOutlinePosition[     64330,       1602]
+CellTagsIndexPosition[     64287,       1599]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[StyleBox["\:24ea\:30c7\:30fc\:30bf\:306e\:6e96\:5099", \
+"Section"]], "Text",
+ CellChangeTimes->{{3.8111364200534897`*^9, 3.811136421481312*^9}, {
+  3.811136483006908*^9, 
+  3.811136494138241*^9}},ExpressionUUID->"05488856-ba5d-41ff-bf21-\
+458f9cfff70b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "SetDirectory", "[", 
+   "\"\</Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-\
+packages/sklearn/datasets/data/\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.8093808694225492`*^9, 3.8093808951258826`*^9}, {
+  3.8093809270045605`*^9, 3.809380928431767*^9}, {3.811134929034872*^9, 
+  3.811134942821927*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"267aa813-27c6-437b-ba8b-435dade64364"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"Import", "[", "\"\<boston_house_prices.csv\>\"", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.809381036191098*^9, 3.809381047387142*^9}, {
+   3.809381161341237*^9, 3.8093811828117895`*^9}, {3.810242025975422*^9, 
+   3.8102420288068256`*^9}, {3.811134946395129*^9, 3.811134949495336*^9}, 
+   3.811136490746833*^9},
+ CellLabel->"In[6]:=",ExpressionUUID->"e3fd6d4a-67b5-47e9-9519-de0ccce0e3e4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"Delete", "[", 
+    RowBox[{"a", ",", "1"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.809381050578602*^9, 3.8093811363052235`*^9}, 
+   3.8093815937547474`*^9, {3.810242032919839*^9, 3.8102420359527006`*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"f6da6871-6958-49be-ae55-2630a9cff770"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"y", "=", 
+   RowBox[{"a", "[", 
+    RowBox[{"[", 
+     RowBox[{";;", ",", "14"}], "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.809382541620612*^9, 3.809382558853535*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"95acde33-59e9-49de-afeb-f691c5d94627"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"B", "=", 
+   RowBox[{
+    RowBox[{"Delete", "[", 
+     RowBox[{
+      RowBox[{"Prepend", "[", 
+       RowBox[{
+        RowBox[{"a", "\[Transpose]"}], ",", 
+        RowBox[{"Table", "[", 
+         RowBox[{"1", ",", 
+          RowBox[{"Length", "[", 
+           RowBox[{"a", "[", 
+            RowBox[{"[", 
+             RowBox[{";;", ",", "1"}], "]"}], "]"}], "]"}]}], "]"}]}], "]"}], 
+      ",", 
+      RowBox[{"-", "1"}]}], "]"}], "//", "Transpose"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8093821540278907`*^9, 3.8093822444519415`*^9}, {
+   3.809382513005178*^9, 3.809382526792325*^9}, 3.8093867581069145`*^9},
+ CellLabel->"In[28]:=",ExpressionUUID->"a8aa77f8-a018-49e9-b393-7e3d2ce2faba"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Omega]", "=", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"B", "\[Transpose]"}], ".", "B"}], ")"}], 
+    RowBox[{"-", "1"}]], ".", 
+   RowBox[{"B", "\[Transpose]"}], ".", "y"}]}]], "Input",
+ CellChangeTimes->{{3.809382600038336*^9, 3.809382702127195*^9}, 
+   3.809383769845766*^9, {3.8106078202401905`*^9, 3.810607823262515*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"6e804ef4-ff82-4d11-aad5-f3f609da8748"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "308.1300966567409`", ",", "437.8808235578293`", ",", "89.16001709968708`", 
+   ",", "31.18120639021742`", ",", "4510.200369623865`", ",", 
+   "553.0286588524626`", ",", "48.98377015333847`", ",", "4.665344578853096`",
+    ",", "88.4876866534967`", ",", "33.895423613395025`", ",", 
+   "0.7436906029832686`", ",", "16.75823392662132`", ",", 
+   "0.877294545363541`", ",", "25.37714251710595`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.8093826572352843`*^9, 3.8093827029270277`*^9, 3.8093974627967005`*^9, 
+   3.8102420402940826`*^9, 3.8105906083401175`*^9, 3.8106078238644457`*^9, 
+   3.8111349634618187`*^9, {3.811135931507634*^9, 3.8111359381754627`*^9}},
+ CellLabel->"Out[31]=",ExpressionUUID->"07a50d6f-e2df-4d2e-881d-5fb6c14f5311"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"B", "\[Transpose]"}], ".", "B"}], ")"}], "//", "Det"}]], "Input",
+ CellChangeTimes->{{3.8093837754866486`*^9, 3.80938377933737*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"1a240118-4e02-4df2-a91e-45acaae0f3e0"],
+
+Cell[BoxData["1.1401940782174073`*^53"], "Output",
+ CellChangeTimes->{
+  3.8093837803017635`*^9, 3.8093974630615015`*^9, 3.810242040796773*^9, 
+   3.810590608385995*^9, 3.8111352626706343`*^9, {3.811135931589848*^9, 
+   3.811135941250169*^9}},
+ CellLabel->"Out[32]=",ExpressionUUID->"78ace09f-f755-46c0-bd0e-ddfc9d8136e3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Beta]list", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Subscript", "[", 
+     RowBox[{"\[Beta]", ",", "#"}], "]"}], "&"}], "/@", 
+   RowBox[{"Range", "[", 
+    RowBox[{"0", ",", "13"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8093827689623632`*^9, 3.8093828269874177`*^9}, {
+  3.8093829384182634`*^9, 3.809382959137827*^9}, {3.8093880650780244`*^9, 
+  3.80938806708665*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"1a70298d-2b38-42f8-a589-74860fef6c61"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   SubscriptBox["\[Beta]", "0"], ",", 
+   SubscriptBox["\[Beta]", "1"], ",", 
+   SubscriptBox["\[Beta]", "2"], ",", 
+   SubscriptBox["\[Beta]", "3"], ",", 
+   SubscriptBox["\[Beta]", "4"], ",", 
+   SubscriptBox["\[Beta]", "5"], ",", 
+   SubscriptBox["\[Beta]", "6"], ",", 
+   SubscriptBox["\[Beta]", "7"], ",", 
+   SubscriptBox["\[Beta]", "8"], ",", 
+   SubscriptBox["\[Beta]", "9"], ",", 
+   SubscriptBox["\[Beta]", "10"], ",", 
+   SubscriptBox["\[Beta]", "11"], ",", 
+   SubscriptBox["\[Beta]", "12"], ",", 
+   SubscriptBox["\[Beta]", "13"]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.809382828853423*^9, {3.80938293900467*^9, 3.809382959604577*^9}, 
+   3.8093880674616456`*^9, 3.8093974633168445`*^9, 3.810242042085318*^9, 
+   3.810523526084516*^9, 3.8105243178891153`*^9, 3.810590608608424*^9, 
+   3.8111352992668867`*^9, 3.811135941365292*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"b9f1dec7-f16f-4f3a-8a58-ee67f8cae8ed"]
+}, Open  ]],
+
+Cell["\[LineSeparator]", "Text",
+ CellChangeTimes->{{3.8111371832720127`*^9, 
+  3.81113719629578*^9}},ExpressionUUID->"718adbcc-3b69-4a83-abfd-\
+04095f4576b3"],
+
+Cell[TextData[StyleBox["\:2460\:7dda\:5f62\:56de\:5e30", "Section"]], "Text",
+ CellChangeTimes->{{3.811137288270628*^9, 
+  3.811137298037629*^9}},ExpressionUUID->"3e249c7f-8ac3-4d40-b821-\
+8cbe3a57f353"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sol", "=", 
+  RowBox[{"FindMinimum", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"y", "-", 
+        RowBox[{"B", ".", "\[Beta]list"}]}], ")"}], "^", "2"}], "//", 
+     "Total"}], ",", "\[Beta]list"}], "]"}], 
+  RowBox[{
+  "(*", "\:6b8b\:5dee\:306e\:4e8c\:4e57\:3067\:4e00\:756a\:5c0f\:3055\:304f\
+\:306a\:308b\:3088\:3046\:306a\:30d1\:30e9\:30e1\:30fc\:30bf\:3092\:6c42\:3081\
+\:308b", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.809382898938899*^9, 3.809382930441616*^9}, {
+  3.8093829723833847`*^9, 3.8093830354157047`*^9}, {3.80938312571073*^9, 
+  3.809383227375794*^9}, {3.809383646442434*^9, 3.809383655782443*^9}, {
+  3.809386928797204*^9, 3.809386929472397*^9}, {3.8111365613015013`*^9, 
+  3.8111366002647963`*^9}, {3.811136849156598*^9, 3.8111368519258842`*^9}, {
+  3.811137061973856*^9, 3.811137068599469*^9}, {3.811137174405129*^9, 
+  3.811137198836974*^9}},
+ CellLabel->"In[54]:=",ExpressionUUID->"57aaaabe-846f-475c-9934-d58979e77d4a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"11078.784577954979`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[Beta]", "0"], "\[Rule]", "36.459488385090054`"}], ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "1"], "\[Rule]", 
+      RowBox[{"-", "0.10801135783679627`"}]}], ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "2"], "\[Rule]", "0.04642045836688158`"}], ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "3"], "\[Rule]", "0.020558626367067734`"}], ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "4"], "\[Rule]", "2.6867338193448957`"}], ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "5"], "\[Rule]", 
+      RowBox[{"-", "17.766611228300512`"}]}], ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "6"], "\[Rule]", "3.8098652068092407`"}], ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "7"], "\[Rule]", "0.000692224640343797`"}], ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "8"], "\[Rule]", 
+      RowBox[{"-", "1.4755668456002806`"}]}], ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "9"], "\[Rule]", "0.30604947898516943`"}], ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "10"], "\[Rule]", 
+      RowBox[{"-", "0.012334593916573988`"}]}], ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "11"], "\[Rule]", 
+      RowBox[{"-", "0.9527472317073054`"}]}], ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "12"], "\[Rule]", "0.009311683273793947`"}], 
+     ",", 
+     RowBox[{
+      SubscriptBox["\[Beta]", "13"], "\[Rule]", 
+      RowBox[{"-", "0.5247583778554776`"}]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.81113594399518*^9, 3.811137221977264*^9},
+ CellLabel->"Out[54]=",ExpressionUUID->"a64dc678-759d-4316-b0aa-18d37ab35461"]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.8111373975698338`*^9},ExpressionUUID->"c7fad075-9d2f-46eb-9389-\
+cb6d05b50f95"],
+
+Cell[TextData[StyleBox["\:2461\:30ea\:30c3\:30b8\:56de\:5e30", "Section"]], \
+"Text",
+ CellChangeTimes->{{3.811137350637135*^9, 
+  3.81113735703273*^9}},ExpressionUUID->"a1c65025-59a5-4156-85df-\
+e0afc02b5460"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"xlist", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Subscript", "[", 
+     RowBox[{"x", ",", "#"}], "]"}], "&"}], "/@", 
+   RowBox[{"Range", "[", "13", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8093880133504305`*^9, 3.8093880282864656`*^9}, {
+  3.8093880747661037`*^9, 3.8093880983180857`*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"3a017f73-2b3c-45a6-91cb-b6ea63a06ee1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   SubscriptBox["x", "1"], ",", 
+   SubscriptBox["x", "2"], ",", 
+   SubscriptBox["x", "3"], ",", 
+   SubscriptBox["x", "4"], ",", 
+   SubscriptBox["x", "5"], ",", 
+   SubscriptBox["x", "6"], ",", 
+   SubscriptBox["x", "7"], ",", 
+   SubscriptBox["x", "8"], ",", 
+   SubscriptBox["x", "9"], ",", 
+   SubscriptBox["x", "10"], ",", 
+   SubscriptBox["x", "11"], ",", 
+   SubscriptBox["x", "12"], ",", 
+   SubscriptBox["x", "13"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.809388077188622*^9, 3.809388099042147*^9}, 
+   3.809397464068101*^9, 3.8102420442066145`*^9, 3.810590608760992*^9, 
+   3.811135300364471*^9, 3.811135946913557*^9},
+ CellLabel->"Out[36]=",ExpressionUUID->"aea6f371-edda-43f8-bd09-654ba0f501e5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"model", "=", 
+  RowBox[{
+   RowBox[{"Prepend", "[", 
+    RowBox[{"xlist", ",", "1"}], "]"}], ".", "\[Beta]list"}]}]], "Input",
+ CellChangeTimes->{{3.8093881068841643`*^9, 3.8093881236144037`*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"a0dfae57-61db-4c7f-984a-a3440da3956d"],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[Beta]", "0"], "+", 
+  RowBox[{
+   SubscriptBox["x", "1"], " ", 
+   SubscriptBox["\[Beta]", "1"]}], "+", 
+  RowBox[{
+   SubscriptBox["x", "2"], " ", 
+   SubscriptBox["\[Beta]", "2"]}], "+", 
+  RowBox[{
+   SubscriptBox["x", "3"], " ", 
+   SubscriptBox["\[Beta]", "3"]}], "+", 
+  RowBox[{
+   SubscriptBox["x", "4"], " ", 
+   SubscriptBox["\[Beta]", "4"]}], "+", 
+  RowBox[{
+   SubscriptBox["x", "5"], " ", 
+   SubscriptBox["\[Beta]", "5"]}], "+", 
+  RowBox[{
+   SubscriptBox["x", "6"], " ", 
+   SubscriptBox["\[Beta]", "6"]}], "+", 
+  RowBox[{
+   SubscriptBox["x", "7"], " ", 
+   SubscriptBox["\[Beta]", "7"]}], "+", 
+  RowBox[{
+   SubscriptBox["x", "8"], " ", 
+   SubscriptBox["\[Beta]", "8"]}], "+", 
+  RowBox[{
+   SubscriptBox["x", "9"], " ", 
+   SubscriptBox["\[Beta]", "9"]}], "+", 
+  RowBox[{
+   SubscriptBox["x", "10"], " ", 
+   SubscriptBox["\[Beta]", "10"]}], "+", 
+  RowBox[{
+   SubscriptBox["x", "11"], " ", 
+   SubscriptBox["\[Beta]", "11"]}], "+", 
+  RowBox[{
+   SubscriptBox["x", "12"], " ", 
+   SubscriptBox["\[Beta]", "12"]}], "+", 
+  RowBox[{
+   SubscriptBox["x", "13"], " ", 
+   SubscriptBox["\[Beta]", "13"]}]}]], "Output",
+ CellChangeTimes->{
+  3.809388125761654*^9, 3.809397464348351*^9, 3.8102420447082973`*^9, 
+   3.8105243653612423`*^9, 3.810590608950408*^9, 3.8111353006619263`*^9, {
+   3.8111359469963083`*^9, 3.811135950187595*^9}},
+ CellLabel->"Out[38]=",ExpressionUUID->"1f432b4b-3e46-4535-8b30-185d8a60cbc0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindFit", "[", 
+  RowBox[{"a", ",", "model", ",", "\[Beta]list", ",", "xlist", ",", 
+   RowBox[{"FitRegularization", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Tikhonov\>\"", ",", "1"}], "}"}]}]}], "]"}]], "Input",
+ CellLabel->"In[55]:=",ExpressionUUID->"23f289d9-2196-4039-ac9c-afa713c86f0c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Beta]", "0"], "\[Rule]", "15.670542705584412`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "1"], "\[Rule]", 
+    RowBox[{"-", "0.09860480656938259`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "2"], "\[Rule]", "0.048255431953334746`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "3"], "\[Rule]", 
+    RowBox[{"-", "0.008775334957627834`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "4"], "\[Rule]", "2.654529162606238`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "5"], "\[Rule]", 
+    RowBox[{"-", "6.288799513283327`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "6"], "\[Rule]", "4.8692744502669765`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "7"], "\[Rule]", 
+    RowBox[{"-", "0.006656749132447145`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "8"], "\[Rule]", 
+    RowBox[{"-", "1.1642461515413565`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "9"], "\[Rule]", "0.23051292969196924`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "10"], "\[Rule]", 
+    RowBox[{"-", "0.011244331423135134`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "11"], "\[Rule]", 
+    RowBox[{"-", "0.6308403874794382`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "12"], "\[Rule]", "0.012296360800317346`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "13"], "\[Rule]", 
+    RowBox[{"-", "0.47729433283641326`"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8111373313012447`*^9},
+ CellLabel->"Out[55]=",ExpressionUUID->"6806d2bc-2ccf-48bc-a06f-aa0a33f87dce"]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.8111374003354883`*^9},ExpressionUUID->"b644d26e-fe25-4dbc-a6ef-\
+8d067ad7d18b"],
+
+Cell[TextData[StyleBox["\:2462Lasso", "Section"]], "Text",
+ CellChangeTimes->{{3.8111373784251823`*^9, 
+  3.811137391031311*^9}},ExpressionUUID->"07ffefa3-a0ea-421a-a25d-\
+cd724333de06"],
+
+Cell[BoxData[
+ RowBox[{"(*", "\:6a19\:6e96\:5316\:306a\:3057\:3067lasso", "*)"}]], "Input",
+ CellChangeTimes->{{3.811137455391119*^9, 
+  3.811137465645423*^9}},ExpressionUUID->"e5897174-5c0e-41b7-bd3e-\
+3364fdc5c06b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ans", "=", 
+  RowBox[{"FindFit", "[", 
+   RowBox[{"a", ",", "model", ",", "\[Beta]list", ",", "xlist", ",", 
+    RowBox[{"FitRegularization", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<LASSO\>\"", ",", "1"}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.809388133800395*^9, 3.8093881427474566`*^9}, {
+   3.809388201245932*^9, 3.809388266899271*^9}, {3.809397817971593*^9, 
+   3.8093978238408318`*^9}, {3.8100002616484222`*^9, 
+   3.8100002820364513`*^9}, {3.8100003551034355`*^9, 3.810000410227928*^9}, {
+   3.810000470596472*^9, 3.810000484504182*^9}, {3.810525513432536*^9, 
+   3.8105255137137184`*^9}, 3.81060787667321*^9, 3.810607927722601*^9},
+ CellLabel->"In[39]:=",ExpressionUUID->"48df0720-f6e3-45e6-a774-441b65dcb66a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Beta]", "0"], "\[Rule]", "35.65962719357571`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "1"], "\[Rule]", 
+    RowBox[{"-", "0.10759561329291831`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "2"], "\[Rule]", "0.04649942992030532`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "3"], "\[Rule]", "0.018777161469605`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "4"], "\[Rule]", "2.671371264113516`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "5"], "\[Rule]", 
+    RowBox[{"-", "17.19649233928683`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "6"], "\[Rule]", "3.843940322070305`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "7"], "\[Rule]", "0.0003101907081786197`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "8"], "\[Rule]", 
+    RowBox[{"-", "1.4622796588083462`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "9"], "\[Rule]", "0.3031650828281344`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "10"], "\[Rule]", 
+    RowBox[{"-", "0.012316929176940355`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "11"], "\[Rule]", 
+    RowBox[{"-", "0.9402554636218434`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "12"], "\[Rule]", "0.009417692247467281`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "13"], "\[Rule]", 
+    RowBox[{"-", "0.5235937229140211`"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.809388225545887*^9, 3.809388268184799*^9, 3.8093974646405687`*^9, {
+   3.8093978199166417`*^9, 3.809397824444664*^9}, {3.810000262752136*^9, 
+   3.8100002826318336`*^9}, {3.810000357676738*^9, 3.8100004107649164`*^9}, {
+   3.8100004726128535`*^9, 3.810000485187883*^9}, 3.8102420456859436`*^9, 
+   3.810524367501361*^9, 3.810525514104229*^9, 3.8105906089972715`*^9, 
+   3.8106078780152407`*^9, 3.8106079297246633`*^9, 3.811135301014895*^9, 
+   3.811135950580092*^9},
+ CellLabel->"Out[39]=",ExpressionUUID->"74391a24-394f-42f2-8ab9-41b20ccab9e7"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", "\:6a19\:6e96\:5316\:3059\:308b", "*)"}]], "Input",
+ CellChangeTimes->{{3.811137490240353*^9, 
+  3.8111374949232073`*^9}},ExpressionUUID->"049470f5-09d5-4ebb-b053-\
+f6b6d9e6d651"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"az", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Standardize", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "[", "a", "]"}], "[", 
+      RowBox[{"[", "#", "]"}], "]"}], "]"}], "&"}], "/@", 
+   RowBox[{"Range", "[", 
+    RowBox[{"Length", "[", 
+     RowBox[{"a", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.810588369091679*^9, 3.8105884066571484`*^9}, {
+  3.810589282720973*^9, 3.810589294161824*^9}, {3.8105893486612988`*^9, 
+  3.810589457881711*^9}, {3.8105895096302576`*^9, 3.8105895409956017`*^9}, {
+  3.811137442195613*^9, 
+  3.8111374795365467`*^9}},ExpressionUUID->"87a1adbe-ac61-4d9a-9695-\
+112af94a28dd"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.4193669292132158`"}], ",", 
+             RowBox[{"-", "0.41692666996409705`"}], ",", 
+             RowBox[{"-", "0.41692899512774556`"}], ",", 
+             RowBox[{"-", "0.4163384035610222`"}], ",", 
+             RowBox[{"-", "0.4120740534296417`"}], ",", 
+             RowBox[{"-", "0.4166313741807353`"}], ",", 
+             RowBox[{"-", "0.4098372459997681`"}], ",", 
+             RowBox[{"-", "0.4032965606564893`"}], ",", 
+             TemplateBox[{"490"},
+              "OutputSizeLimit`Skeleton"], ",", 
+             RowBox[{"-", "0.3923020243444758`"}], ",", 
+             RowBox[{"-", "0.3994274883453567`"}], ",", 
+             RowBox[{"-", "0.39401566995343296`"}], ",", 
+             RowBox[{"-", "0.41282043096081567`"}], ",", 
+             RowBox[{"-", "0.4148386730077286`"}], ",", 
+             RowBox[{"-", "0.413037833761952`"}], ",", 
+             RowBox[{"-", "0.40736094671409734`"}], ",", 
+             RowBox[{"-", "0.41458988049733725`"}]}], "}"}], ",", 
+           TemplateBox[{"12"},
+            "OutputSizeLimit`Skeleton"], ",", 
+           RowBox[{"{", 
+            TemplateBox[{"1"},
+             "OutputSizeLimit`Skeleton"], "}"}]}], "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          PaneBox[
+           TagBox[
+            TooltipBox[
+             StyleBox[
+              StyleBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "sizeBriefExplanation"], StandardForm],
+                ImageSizeCache->{58., {1., 10.}}],
+               StripOnInput->False,
+               DynamicUpdating->True,
+               LineSpacing->{1, 2},
+               LineIndent->0,
+               LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLText",
+              StripOnInput->False],
+             StyleBox[
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+                StandardForm]], DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}, StripOnInput -> False]],
+            Annotation[#, 
+             Style[
+              Dynamic[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+              DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}], "Tooltip"]& ],
+           Alignment->Center,
+           BaselinePosition->Baseline,
+           ImageSize->{Automatic, {25, Full}}], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{69., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{69., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 40, 30341441370692359722, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{58., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{58., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 40, 30341441370692359722, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{58., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{58., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 40, 30341441370692359722, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{105., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{105., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Advanced"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    BaseStyle->"OutputSizeLimit",
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  If[30341441370692359722 === $SessionID, 
+   Out[40], Message[
+     MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
+   Null]]], "Output",
+ CellChangeTimes->{{3.810589384212143*^9, 3.8105894057430243`*^9}, 
+   3.810589472472722*^9, {3.8105895183062525`*^9, 3.8105895416538363`*^9}, 
+   3.8105906092198105`*^9, 3.811135338525416*^9, 3.811135959542375*^9},
+ CellLabel->"Out[40]=",ExpressionUUID->"ea0a970d-88a1-4ffe-af8e-981865dbfc3e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"test", "=", 
+  RowBox[{"Standardize", "[", 
+   RowBox[{"a", "\[Transpose]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.810589854083078*^9, 3.8105899096244965`*^9}},
+ CellLabel->"In[41]:=",ExpressionUUID->"d18ff3a4-da15-4fa6-a899-4174a989c7db"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.47974989390908246`"}], ",", 
+             RowBox[{"-", "0.4789656555171599`"}], ",", 
+             RowBox[{"-", "0.47573990732229066`"}], ",", 
+             RowBox[{"-", "0.4596006359321606`"}], ",", 
+             RowBox[{"-", "0.4677268529479119`"}], ",", 
+             RowBox[{"-", "0.46593918557036956`"}], ",", 
+             RowBox[{"-", "0.48814540661579614`"}], ",", 
+             RowBox[{"-", "0.5105789745822645`"}], ",", 
+             TemplateBox[{"490"},
+              "OutputSizeLimit`Skeleton"], ",", 
+             RowBox[{"-", "0.47440460632290354`"}], ",", 
+             RowBox[{"-", "0.4778999840683459`"}], ",", 
+             RowBox[{"-", "0.4799864839689861`"}], ",", 
+             RowBox[{"-", "0.48130914415685966`"}], ",", 
+             RowBox[{"-", "0.4822192621283668`"}], ",", 
+             RowBox[{"-", "0.48992297325794576`"}], ",", 
+             RowBox[{"-", "0.4889701081343676`"}], ",", 
+             RowBox[{"-", "0.4776086865398584`"}]}], "}"}], ",", 
+           TemplateBox[{"12"},
+            "OutputSizeLimit`Skeleton"], ",", 
+           RowBox[{"{", 
+            TemplateBox[{"1"},
+             "OutputSizeLimit`Skeleton"], "}"}]}], "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          PaneBox[
+           TagBox[
+            TooltipBox[
+             StyleBox[
+              StyleBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "sizeBriefExplanation"], StandardForm],
+                ImageSizeCache->{58., {1., 10.}}],
+               StripOnInput->False,
+               DynamicUpdating->True,
+               LineSpacing->{1, 2},
+               LineIndent->0,
+               LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLText",
+              StripOnInput->False],
+             StyleBox[
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+                StandardForm]], DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}, StripOnInput -> False]],
+            Annotation[#, 
+             Style[
+              Dynamic[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+              DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}], "Tooltip"]& ],
+           Alignment->Center,
+           BaselinePosition->Baseline,
+           ImageSize->{Automatic, {25, Full}}], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{69., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 41, 30341441370692359722, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{58., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{58., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 41, 30341441370692359722, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{58., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 41, 30341441370692359722, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{105., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Advanced"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    BaseStyle->"OutputSizeLimit",
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  If[30341441370692359722 === $SessionID, 
+   Out[41], Message[
+     MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
+   Null]]], "Output",
+ CellChangeTimes->{{3.8105898812474995`*^9, 3.810589910912201*^9}, 
+   3.810590609364424*^9, 3.81113534080302*^9, 3.811135964499997*^9},
+ CellLabel->"Out[41]=",ExpressionUUID->"deac45aa-866a-47e3-9a4b-7fba943101d6"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"az", "[", 
+   RowBox[{"[", "14", "]"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.810589543270506*^9, 3.8105895545785484`*^9}, {
+   3.8105899201691294`*^9, 3.8105899522395897`*^9}, {3.8105904493749714`*^9, 
+   3.8105904500826054`*^9}, 3.8111359920453987`*^9},
+ CellLabel->"In[48]:=",ExpressionUUID->"d884063d-e04d-4056-a05e-97886d4c13f3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{
+    RowBox[{"a", "[", 
+     RowBox[{"[", 
+      RowBox[{";;", ",", "1"}], "]"}], "]"}], "-", 
+    RowBox[{"Mean", "[", 
+     RowBox[{"a", "[", 
+      RowBox[{"[", 
+       RowBox[{";;", ",", "1"}], "]"}], "]"}], "]"}]}], 
+   RowBox[{"StandardDeviation", "[", 
+    RowBox[{"a", "[", 
+     RowBox[{"[", 
+      RowBox[{";;", ",", "1"}], "]"}], "]"}], "]"}]], "-", 
+  RowBox[{"az", "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8105899729270463`*^9, 3.8105900110274954`*^9}, {
+  3.8105900700679274`*^9, 3.810590104152639*^9}},
+ CellLabel->"In[43]:=",ExpressionUUID->"f7ca3a7e-6f0d-42ce-afa4-b977234503cc"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`"}], "}"}]], "Output",
+ CellChangeTimes->{{3.810589975126359*^9, 3.8105899913546004`*^9}, {
+   3.810590096643173*^9, 3.8105901047620077`*^9}, 3.810590609642704*^9, 
+   3.8111353443001347`*^9, 3.8111359647297153`*^9},
+ CellLabel->"Out[43]=",ExpressionUUID->"3f7767d8-0758-4d66-a18e-be3d901339b1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"az", "\[Transpose]"}]], "Input",
+ CellChangeTimes->{{3.81059054140368*^9, 3.8105905496716595`*^9}, {
+  3.8105905879486623`*^9, 3.810590588239459*^9}},
+ CellLabel->"In[49]:=",ExpressionUUID->"0f6085aa-ed56-40dc-838b-eae4561c8ffb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.4193669292132158`"}], ",", "0.2845482693404653`",
+              ",", 
+             RowBox[{"-", "1.2866362317172004`"}], ",", 
+             RowBox[{
+              RowBox[{"-", "5"}], " ", 
+              SqrtBox[
+               FractionBox["707", "238326"]]}], ",", 
+             RowBox[{"-", "0.14407485473245396`"}], ",", 
+             "0.4132629204530862`", ",", 
+             RowBox[{"-", "0.11989476721580808`"}], ",", 
+             "0.14007498397956222`", ",", 
+             RowBox[{
+              RowBox[{"-", "2163"}], " ", 
+              SqrtBox[
+               FractionBox["505", "2450729534"]]}], ",", 
+             RowBox[{
+              RowBox[{"-", "7099"}], " ", 
+              SqrtBox[
+               FractionBox["505", "57385682893"]]}], ",", 
+             RowBox[{"-", "1.4575579672896026`"}], ",", "0.440615894999094`", 
+             ",", 
+             RowBox[{"-", "1.0744989703439318`"}], ",", 
+             "0.15952778852449873`"}], "}"}], ",", 
+           RowBox[{"{", 
+            TemplateBox[{"1"},
+             "OutputSizeLimit`Skeleton"], "}"}], ",", 
+           TemplateBox[{"502"},
+            "OutputSizeLimit`Skeleton"], ",", 
+           RowBox[{"{", 
+            TemplateBox[{"1"},
+             "OutputSizeLimit`Skeleton"], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.41458988049733725`"}], ",", 
+             TemplateBox[{"12"},
+              "OutputSizeLimit`Skeleton"], ",", 
+             RowBox[{"-", "1.1561037282051543`"}]}], "}"}]}], "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          PaneBox[
+           TagBox[
+            TooltipBox[
+             StyleBox[
+              StyleBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "sizeBriefExplanation"], StandardForm],
+                ImageSizeCache->{58., {1., 10.}}],
+               StripOnInput->False,
+               DynamicUpdating->True,
+               LineSpacing->{1, 2},
+               LineIndent->0,
+               LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLText",
+              StripOnInput->False],
+             StyleBox[
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+                StandardForm]], DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}, StripOnInput -> False]],
+            Annotation[#, 
+             Style[
+              Dynamic[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+              DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}], "Tooltip"]& ],
+           Alignment->Center,
+           BaselinePosition->Baseline,
+           ImageSize->{Automatic, {25, Full}}], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{69., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{69., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 49, 30341441370692359722, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{58., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{58., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 49, 30341441370692359722, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{58., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 49, 30341441370692359722, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{105., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{105., {1., 10.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Advanced"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    BaseStyle->"OutputSizeLimit",
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  If[30341441370692359722 === $SessionID, 
+   Out[49], Message[
+     MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
+   Null]]], "Output",
+ CellChangeTimes->{
+  3.8105905107562056`*^9, {3.81059054314554*^9, 3.8105905474313803`*^9}, 
+   3.810590609772358*^9, 3.811135381543668*^9, {3.811135970132491*^9, 
+   3.811135998018895*^9}},
+ CellLabel->"Out[49]=",ExpressionUUID->"6ab3e663-7158-4352-a721-47c0ff1de7b4"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  "\:6a19\:6e96\:5316\:3057\:3066\:3082\:3069\:3057\:305f\:3042\:3068\:306e\
+Lasso", "*)"}]], "Input",
+ CellChangeTimes->{{3.8111375469930573`*^9, 
+  3.8111375880909243`*^9}},ExpressionUUID->"647289fb-74ff-422d-a53c-\
+5458a212ba0f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ansz", "=", 
+  RowBox[{"FindFit", "[", 
+   RowBox[{
+    RowBox[{"az", "\[Transpose]"}], ",", "model", ",", "\[Beta]list", ",", 
+    "xlist", ",", 
+    RowBox[{"FitRegularization", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<LASSO\>\"", ",", "2"}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.810590245635254*^9, 3.8105902704584846`*^9}, {
+  3.8105904885797443`*^9, 3.810590504192577*^9}, {3.8105906229506598`*^9, 
+  3.8105906230678387`*^9}},
+ CellLabel->"In[50]:=",ExpressionUUID->"ec3fcf25-1f2a-4cef-89ba-30ab1f66b161"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Beta]", "0"], "\[Rule]", "0.`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "1"], "\[Rule]", 
+    RowBox[{"-", "0.09547431496112667`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "2"], "\[Rule]", "0.10913508675821662`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "3"], "\[Rule]", "0.`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "4"], "\[Rule]", "0.0744426407799146`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "5"], "\[Rule]", 
+    RowBox[{"-", "0.21027610798616336`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "6"], "\[Rule]", "0.29354573470616896`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "7"], "\[Rule]", "0.`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "8"], "\[Rule]", 
+    RowBox[{"-", "0.3275492310130211`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "9"], "\[Rule]", "0.25576045739770825`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "10"], "\[Rule]", 
+    RowBox[{"-", "0.1933487372238962`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "11"], "\[Rule]", 
+    RowBox[{"-", "0.22034164525460548`"}]}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "12"], "\[Rule]", "0.09053869127847702`"}], ",", 
+   RowBox[{
+    SubscriptBox["\[Beta]", "13"], "\[Rule]", 
+    RowBox[{"-", "0.40569871452677564`"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.8105902720361137`*^9, {3.810590489952687*^9, 3.810590504615192*^9}, {
+   3.810590609817212*^9, 3.8105906233802423`*^9}, 3.8111354244208517`*^9, {
+   3.8111359747212343`*^9, 3.8111360030632753`*^9}},
+ CellLabel->"Out[50]=",ExpressionUUID->"6c5243c0-3efc-4113-954f-1aec61984700"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Sigma]list", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"StandardDeviation", "[", 
+       RowBox[{"a", "[", 
+        RowBox[{"[", 
+         RowBox[{";;", ",", "14"}], "]"}], "]"}], "]"}], "/", 
+      RowBox[{"StandardDeviation", "[", 
+       RowBox[{"a", "[", 
+        RowBox[{"[", 
+         RowBox[{";;", ",", "#"}], "]"}], "]"}], "]"}]}], "&"}], "/@", 
+    RowBox[{"Range", "[", "13", "]"}]}], "//", "N"}]}]], "Input",
+ CellChangeTimes->{{3.810590695783018*^9, 3.8105907369035873`*^9}, {
+  3.810590880022588*^9, 3.8105908801283393`*^9}, {3.8105993942372217`*^9, 
+  3.8105993948882575`*^9}, {3.810599617806404*^9, 3.8105996279499474`*^9}},
+ CellLabel->"In[51]:=",ExpressionUUID->"405f430d-8bdd-40cc-a353-bbfe0f55644b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1.0692386047802172`", ",", "0.3943454871381988`", ",", 
+   "1.340616753483896`", ",", "36.20992066917658`", ",", "79.36907635052668`",
+    ",", "13.089780364131144`", ",", "0.3267309449725804`", ",", 
+   "4.367697135079743`", ",", "1.0562570473123951`", ",", 
+   "0.054570199743899095`", ",", "4.248191922908139`", ",", 
+   "0.10074065117923289`", ",", "1.2879183399784169`"}], "}"}]], "Output",
+ CellChangeTimes->{{3.810590718446293*^9, 3.8105907375842023`*^9}, 
+   3.8105908804435434`*^9, 3.810599395493311*^9, 3.8105996282441587`*^9, 
+   3.811135426820031*^9, 3.8111359748337603`*^9, 3.811136008934265*^9},
+ CellLabel->"Out[51]=",ExpressionUUID->"c1ac54b9-8e84-4b5f-b7d0-929dcd2e5dae"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Drop", "[", 
+    RowBox[{"\[Beta]list", ",", "1"}], "]"}], "*", "\[Sigma]list"}], "/.", 
+  "ansz"}]], "Input",
+ CellChangeTimes->{{3.810590739757946*^9, 3.810590769311407*^9}, {
+  3.810590808333456*^9, 3.810590816007512*^9}, {3.810590892190522*^9, 
+  3.8105908955030975`*^9}, {3.8105987168949423`*^9, 3.8105987235427513`*^9}, {
+  3.8105991308490667`*^9, 3.8105991314933443`*^9}},
+ CellLabel->"In[52]:=",ExpressionUUID->"f4baafd7-be0b-4e53-a4a9-5288b9e12ae6"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "0.10208482332138209`"}], ",", "0.043036928951538524`", ",", 
+   "0.`", ",", "2.6955621170447173`", ",", 
+   RowBox[{"-", "16.689420469445395`"}], ",", "3.8424491941312606`", ",", 
+   "0.`", ",", 
+   RowBox[{"-", "1.430635837893145`"}], ",", "0.27014878555017097`", ",", 
+   RowBox[{"-", "0.010551079210538673`"}], ",", 
+   RowBox[{"-", "0.9360535976509053`"}], ",", "0.009120926716309308`", ",", 
+   RowBox[{"-", "0.5225068149447025`"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.810590756709436*^9, 3.810590769927724*^9}, {
+   3.8105908090770807`*^9, 3.8105908166612663`*^9}, 3.8105987240952787`*^9, 
+   3.810599398908199*^9, 3.8105996327054954`*^9, 3.811135447509696*^9, 
+   3.811136011707542*^9},
+ CellLabel->"Out[52]=",ExpressionUUID->"c371ad25-0c65-4bf2-826b-1c0110183c7e"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{Automatic, -907}, {Automatic, -256}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (2020\:5e746\:670822\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"7b6dfbc5-0082-4360-b926-159074883365"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 268, 5, 64, "Text",ExpressionUUID->"05488856-ba5d-41ff-bf21-458f9cfff70b"],
+Cell[671, 20, 447, 9, 109, "Input",ExpressionUUID->"267aa813-27c6-437b-ba8b-435dade64364"],
+Cell[1121, 31, 454, 9, 54, "Input",ExpressionUUID->"e3fd6d4a-67b5-47e9-9519-de0ccce0e3e4"],
+Cell[1578, 42, 349, 7, 54, "Input",ExpressionUUID->"f6da6871-6958-49be-ae55-2630a9cff770"],
+Cell[1930, 51, 294, 7, 37, "Input",ExpressionUUID->"95acde33-59e9-49de-afeb-f691c5d94627"],
+Cell[2227, 60, 728, 19, 54, "Input",ExpressionUUID->"a8aa77f8-a018-49e9-b393-7e3d2ce2faba"],
+Cell[CellGroupData[{
+Cell[2980, 83, 467, 11, 38, "Input",ExpressionUUID->"6e804ef4-ff82-4d11-aad5-f3f609da8748"],
+Cell[3450, 96, 781, 13, 69, "Output",ExpressionUUID->"07a50d6f-e2df-4d2e-881d-5fb6c14f5311"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4268, 114, 276, 6, 54, "Input",ExpressionUUID->"1a240118-4e02-4df2-a91e-45acaae0f3e0"],
+Cell[4547, 122, 322, 5, 43, "Output",ExpressionUUID->"78ace09f-f755-46c0-bd0e-ddfc9d8136e3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4906, 132, 481, 11, 54, "Input",ExpressionUUID->"1a70298d-2b38-42f8-a589-74860fef6c61"],
+Cell[5390, 145, 968, 22, 42, "Output",ExpressionUUID->"b9f1dec7-f16f-4f3a-8a58-ee67f8cae8ed"]
+}, Open  ]],
+Cell[6373, 170, 159, 3, 73, "Text",ExpressionUUID->"718adbcc-3b69-4a83-abfd-04095f4576b3"],
+Cell[6535, 175, 203, 3, 64, "Text",ExpressionUUID->"3e249c7f-8ac3-4d40-b821-8cbe3a57f353"],
+Cell[CellGroupData[{
+Cell[6763, 182, 1005, 21, 83, "Input",ExpressionUUID->"57aaaabe-846f-475c-9934-d58979e77d4a"],
+Cell[7771, 205, 1703, 41, 121, "Output",ExpressionUUID->"a64dc678-759d-4316-b0aa-18d37ab35461"]
+}, Open  ]],
+Cell[9489, 249, 149, 3, 64, "Input",ExpressionUUID->"c7fad075-9d2f-46eb-9389-cb6d05b50f95"],
+Cell[9641, 254, 210, 4, 64, "Text",ExpressionUUID->"a1c65025-59a5-4156-85df-e0afc02b5460"],
+Cell[CellGroupData[{
+Cell[9876, 262, 396, 9, 54, "Input",ExpressionUUID->"3a017f73-2b3c-45a6-91cb-b6ea63a06ee1"],
+Cell[10275, 273, 751, 19, 42, "Output",ExpressionUUID->"aea6f371-edda-43f8-bd09-654ba0f501e5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11063, 297, 299, 6, 54, "Input",ExpressionUUID->"a0dfae57-61db-4c7f-984a-a3440da3956d"],
+Cell[11365, 305, 1477, 46, 69, "Output",ExpressionUUID->"1f432b4b-3e46-4535-8b30-185d8a60cbc0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12879, 356, 322, 6, 54, "Input",ExpressionUUID->"23f289d9-2196-4039-ac9c-afa713c86f0c"],
+Cell[13204, 364, 1583, 40, 95, "Output",ExpressionUUID->"6806d2bc-2ccf-48bc-a06f-aa0a33f87dce"]
+}, Open  ]],
+Cell[14802, 407, 149, 3, 64, "Input",ExpressionUUID->"b644d26e-fe25-4dbc-a6ef-8d067ad7d18b"],
+Cell[14954, 412, 186, 3, 64, "Text",ExpressionUUID->"07ffefa3-a0ea-421a-a25d-cd724333de06"],
+Cell[15143, 417, 217, 4, 37, "Input",ExpressionUUID->"e5897174-5c0e-41b7-bd3e-3364fdc5c06b"],
+Cell[CellGroupData[{
+Cell[15385, 425, 765, 13, 54, "Input",ExpressionUUID->"48df0720-f6e3-45e6-a774-441b65dcb66a"],
+Cell[16153, 440, 1983, 45, 95, "Output",ExpressionUUID->"74391a24-394f-42f2-8ab9-41b20ccab9e7"]
+}, Open  ]],
+Cell[18151, 488, 208, 4, 37, "Input",ExpressionUUID->"049470f5-09d5-4ebb-b053-f6b6d9e6d651"],
+Cell[CellGroupData[{
+Cell[18384, 496, 686, 17, 54, "Input",ExpressionUUID->"87a1adbe-ac61-4d9a-9695-112af94a28dd"],
+Cell[19073, 515, 10284, 257, 195, "Output",ExpressionUUID->"ea0a970d-88a1-4ffe-af8e-981865dbfc3e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29394, 777, 267, 5, 54, "Input",ExpressionUUID->"d18ff3a4-da15-4fa6-a899-4174a989c7db"],
+Cell[29664, 784, 10059, 253, 195, "Output",ExpressionUUID->"deac45aa-866a-47e3-9a4b-7fba943101d6"]
+}, Open  ]],
+Cell[39738, 1040, 377, 7, 37, "Input",ExpressionUUID->"d884063d-e04d-4056-a05e-97886d4c13f3"],
+Cell[CellGroupData[{
+Cell[40140, 1051, 680, 19, 60, "Input",ExpressionUUID->"f7ca3a7e-6f0d-42ce-afa4-b977234503cc"],
+Cell[40823, 1072, 6737, 91, 745, "Output",ExpressionUUID->"3f7767d8-0758-4d66-a18e-be3d901339b1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47597, 1168, 253, 4, 37, "Input",ExpressionUUID->"0f6085aa-ed56-40dc-838b-eae4561c8ffb"],
+Cell[47853, 1174, 10562, 271, 242, "Output",ExpressionUUID->"6ab3e663-7158-4352-a721-47c0ff1de7b4"]
+}, Open  ]],
+Cell[58430, 1448, 262, 6, 37, "Input",ExpressionUUID->"647289fb-74ff-422d-a53c-5458a212ba0f"],
+Cell[CellGroupData[{
+Cell[58717, 1458, 558, 12, 54, "Input",ExpressionUUID->"ec3fcf25-1f2a-4cef-89ba-30ab1f66b161"],
+Cell[59278, 1472, 1671, 41, 95, "Output",ExpressionUUID->"6c5243c0-3efc-4113-954f-1aec61984700"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60986, 1518, 772, 18, 125, "Input",ExpressionUUID->"405f430d-8bdd-40cc-a353-bbfe0f55644b"],
+Cell[61761, 1538, 731, 12, 69, "Output",ExpressionUUID->"c1ac54b9-8e84-4b5f-b7d0-929dcd2e5dae"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62529, 1555, 505, 10, 54, "Input",ExpressionUUID->"f4baafd7-be0b-4e53-a4a9-5288b9e12ae6"],
+Cell[63037, 1567, 835, 15, 69, "Output",ExpressionUUID->"c371ad25-0c65-4bf2-826b-1c0110183c7e"]
+}, Open  ]]
+}
+]
+*)
+
